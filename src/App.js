@@ -1,21 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect
+} from 'react-router-dom'
+import Client from './Client/Client';
+import Result from './Result/Result';
+import Login from './Login/Login';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Juleølsmaking 2017!</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = { loggedIn: false };
+	}
+
+	setLoggedIn() {
+		console.log('set loggedIn: true', this.setState);
+		this.setState({loggedIn: true});
+	}
+
+	render() {
+		console.log('snapshot', this.props);
+		return (
+			<Router>
+				<div>
+					<Switch>
+						<PrivateRoute path="/client"
+						              component={Client}
+						              isLoggedIn={this.state.loggedIn} />
+						<Route path='/login'
+						       render={
+							       routeProps =>
+								       <Login {...routeProps} setLoggedIn={() => this.setLoggedIn()} />
+						       } />
+						<Route path="/" component={Result} exact />
+					</Switch>
+				</div>
+			</Router>
+		);
+	}
 }
+
+const PrivateRoute = ({ component: Component, isLoggedIn, setLoggedIn, ...rest }) => {
+	console.log('isLoggedIn', isLoggedIn);
+	return (
+		<Route {...rest} render={props => (
+			isLoggedIn ? (
+				<Component {...props} />
+			) : (
+				<Redirect to={{
+					pathname: '/login',
+					state: { from: props.location }
+				}} setLoggedIn={setLoggedIn} />
+			)
+		)} />
+	);
+};
 
 export default App;
