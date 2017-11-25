@@ -5,7 +5,7 @@ import {
 	Switch,
 	Redirect
 } from 'react-router-dom'
-import Client from './Client/Client';
+import Reviewer from './Reviewer/Reviewer';
 import BeerReview from './BeerReview/BeerReview';
 import Result from './Result/Result';
 import Login from './Login/Login';
@@ -18,10 +18,10 @@ class App extends Component {
 			<Router>
 				<div>
 					<Switch>
-						<PrivateRoute path="/client"
-						              component={Client}
+						<PrivateRoute path="/reviewer"
+						              component={Reviewer}
 						              exact />
-						<PrivateRoute path="/client/:beerId"
+						<PrivateRoute path="/reviewer/:beerId"
 						              component={BeerReview}
 						              exact />
 						<Route path='/login'

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { fire } from '../fire';
-import './Client.css'
+import './Reviewer.css'
 
-class Client extends Component {
+class Reviewer extends Component {
 
 	constructor(props) {
 		super(props);
@@ -33,7 +33,7 @@ class Client extends Component {
 				<div>
 					Velg øl
 					{this.state.beerList.map(beer =>
-						<div key={beer.id}><Link to={`/client/${beer.id}`}>{beer.brand}</Link></div>
+						<div key={beer.id}><Link to={`/reviewer/${beer.id}`}>{beer.brand}</Link></div>
 					)}
 				</div>
 				<div>
@@ -44,4 +44,4 @@ class Client extends Component {
 	}
 }
 
-export default Client;
+export default Reviewer;

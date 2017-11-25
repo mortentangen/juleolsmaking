@@ -4,7 +4,7 @@ import { fire } from '../fire';
 
 const Result = () =>
 	<div>
-		<Link to="/client">Delta</Link>
+		<Link to="/reviewer">Delta</Link>
 		<div>Resultat kommer her {console.log('fire', fire)}</div>
 	</div>;
 
