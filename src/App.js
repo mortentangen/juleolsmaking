@@ -7,16 +7,17 @@ import {
 } from 'react-router-dom'
 import Reviewer from './Reviewer/Reviewer';
 import BeerReview from './BeerReview/BeerReview';
-import Result from './Result/Result';
+import Board from './Board/Board';
 import Login from './Login/Login';
 import { fire } from './fire';
+import './App.css';
 
 class App extends Component {
 
 	render() {
 		return (
 			<Router>
-				<div>
+				<div className="App">
 					<Switch>
 						<PrivateRoute path="/reviewer"
 						              component={Reviewer}
@@ -29,7 +30,7 @@ class App extends Component {
 							       routeProps =>
 								       <Login {...routeProps} />
 						       } />
-						<Route path="/" component={Result} exact />
+						<Route path="/" component={Board} exact />
 					</Switch>
 				</div>
 			</Router>

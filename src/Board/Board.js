@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { fire } from '../fire';
 
-const Result = () =>
+const Board = () =>
 	<div>
 		<Link to="/reviewer">Delta</Link>
 		<div>Resultat kommer her {console.log('fire', fire)}</div>
 	</div>;
 
-export default Result;
+export default Board;

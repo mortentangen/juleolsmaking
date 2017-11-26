@@ -1,0 +1,14 @@
+.react-rater-star {
+	/*color of star not rated*/
+	color: #000;
+}
+
+.react-rater-star.will-be-active {
+	/*color of star on hover*/
+	color: #d9c77a;
+}
+
+.react-rater-star.is-active {
+	/*color of star rated*/
+	color: #c9af42;
+}

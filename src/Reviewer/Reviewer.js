@@ -37,7 +37,7 @@ class Reviewer extends Component {
 					)}
 				</div>
 				<div>
-					<Link to="/">Board</Link>
+					<Link to="/">Tilbake</Link>
 				</div>
 			</div>
 		);

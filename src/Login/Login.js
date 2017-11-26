@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fire, authProvider } from '../fire';
 import { Redirect } from 'react-router-dom'
+import './Login.css';
 
 class Login extends Component {
 	constructor(props) {
@@ -31,14 +32,20 @@ class Login extends Component {
 	render() {
 		const { from } = this.props.location.state || { from: { pathname: '/' } };
 		const { redirectToReferrer } = this.state;
-		if (redirectToReferrer) {
-			return (
-				<Redirect to={from} />
-			)
+		if (fire.auth().currentUser) {
+			if (redirectToReferrer) {
+				return (
+					<Redirect to={from} />
+				)
+			} else {
+				return <Redirect to="/reviewer" />
+			}
 		}
 		return (
-			<div>
-				<button onClick={() => this.googleSignin()}>Logg på</button>
+			<div className="Login_container">
+				<div className="Login_inner">
+					<button className="Login_button" onClick={() => this.googleSignin()}>Logg inn</button>
+				</div>
 			</div>
 		);
 	}
