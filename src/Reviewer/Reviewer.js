@@ -23,6 +23,16 @@ class Reviewer extends Component {
 		})
 	}
 
+	signOut() {
+		console.log('this', this);
+		fire.auth().signOut().then(() => {
+			console.log('Logged out: fire.auth().currentUser', fire.auth().currentUser);
+			this.props.history.push('/login');
+		}).catch((error) => {
+			console.error('Noe gikk galt under utlogging', error);
+		});
+	}
+
 	render() {
 		const { currentUser } = fire.auth();
 		console.log('currentUser', currentUser);
@@ -39,6 +49,7 @@ class Reviewer extends Component {
 				<div>
 					<Link to="/">Tilbake</Link>
 				</div>
+				<div><button className="Reviewer_logoutBtn" onClick={() => this.signOut()}>Logg ut</button></div>
 			</div>
 		);
 	}

@@ -19,7 +19,6 @@ class Login extends Component {
 
 				console.log(token);
 				console.log(user);
-				this.props.setLoggedIn();
 				console.log('this.setState', this.setState);
 				this.setState({ redirectToReferrer: true });
 			}).catch(error => {
