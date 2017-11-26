@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { fire } from '../fire';
 import User from '../User/User';
+import BeerItem from './BeerItem/BeerItem';
 import './Reviewer.css'
 
 class Reviewer extends Component {
@@ -16,8 +17,7 @@ class Reviewer extends Component {
 		let messagesRef = fire.database().ref('beer');
 		messagesRef.on('child_added', snapshot => {
 			/* Update React state when message is added at Firebase Database */
-			const { brand, name, year } = snapshot.val();
-			const beer = { brand, name, year, id: snapshot.key };
+			const beer = { ...snapshot.val(), id: snapshot.key };
 			this.setState((state, props) => ({
 				beerList: [...state.beerList, beer]
 			}));
@@ -46,9 +46,7 @@ class Reviewer extends Component {
 				<div>
 					{
 						this.state.beerList.map(beer =>
-							<div key={beer.id} className="Reviewer_row">
-								<Link to={`/reviewer/${beer.id}`}>{beer.brand}</Link>
-							</div>
+							<BeerItem beer={beer} />
 						)
 					}
 				</div>
