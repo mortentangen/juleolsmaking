@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { fire } from '../fire';
+import User from '../User/User';
 import './Reviewer.css'
 
 class Reviewer extends Component {
@@ -39,17 +40,21 @@ class Reviewer extends Component {
 		console.log('beerList', this.state.beerList);
 		return (
 			<div>
-				<img className="googlePhoto" src={currentUser.photoURL} alt="profilbilde" />
-				<div>
-					Velg øl
-					{this.state.beerList.map(beer =>
-						<div key={beer.id}><Link to={`/reviewer/${beer.id}`}>{beer.brand}</Link></div>
-					)}
+				<div className="Reviewer_user">
+					<User history={this.props.history} />
 				</div>
 				<div>
-					<Link to="/">Tilbake</Link>
+					{
+						this.state.beerList.map(beer =>
+							<div key={beer.id} className="Reviewer_row">
+								<Link to={`/reviewer/${beer.id}`}>{beer.brand}</Link>
+							</div>
+						)
+					}
 				</div>
-				<div><button className="Reviewer_logoutBtn" onClick={() => this.signOut()}>Logg ut</button></div>
+				<div className="Reviewer_gotoResult">
+					<Link to="/">Resultater</Link>
+				</div>
 			</div>
 		);
 	}

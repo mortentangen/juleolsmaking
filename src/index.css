@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.buttonAsLink {
+	background: none !important;
+	color: inherit;
+	border: none;
+	padding: 0 !important;
+	font: inherit;
+	border-bottom: 1px solid #444;
+	cursor: pointer;
+	vertical-align: middle;
+}
