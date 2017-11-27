@@ -1,11 +1,13 @@
 .BeerItem_container {
-	border: 1px solid black;
 	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.BeerItem_beerImage {
+	min-width: 70px;
+}
 .BeerItem_beerImage > img {
 	height: 70px;
 	border-radius: 5px;
@@ -17,7 +19,6 @@
 	display: inline-block;
 	overflow: hidden;
 }
-
 .BeerItem_beerName > div {
 	padding: 0 3px;
 	display: inline-block;

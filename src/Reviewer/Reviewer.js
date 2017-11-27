@@ -15,12 +15,9 @@ class Reviewer extends Component {
 	componentDidMount() {
 		/* Create reference to messages in Firebase Database */
 		let messagesRef = fire.database().ref('beer');
-		messagesRef.on('child_added', snapshot => {
+		messagesRef.on('value', snapshot => {
 			/* Update React state when message is added at Firebase Database */
-			const beer = { ...snapshot.val(), id: snapshot.key };
-			this.setState((state, props) => ({
-				beerList: [...state.beerList, beer]
-			}));
+			this.setState({beerList: snapshot.val().filter(Boolean)});
 		})
 	}
 
@@ -46,7 +43,7 @@ class Reviewer extends Component {
 				<div>
 					{
 						this.state.beerList.map(beer =>
-							<BeerItem beer={beer} />
+							<BeerItem key={beer.id} beer={beer} />
 						)
 					}
 				</div>
