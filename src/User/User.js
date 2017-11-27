@@ -15,7 +15,7 @@ const User = ({ history }) => (
 	<div className="User_container">
 		<div><img className="googlePhoto" src={fire.auth().currentUser.photoURL} alt="profilbilde" /></div>
 		<div>
-			<button className="buttonAsLink" onClick={() => this.signOut()}>Logg ut</button>
+			<button className="buttonAsLink" onClick={() => signOut(history)}>Logg ut</button>
 		</div>
 	</div>
 );

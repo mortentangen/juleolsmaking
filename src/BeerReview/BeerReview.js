@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { fire } from '../fire';
 import './BeerReview.css';
 
+import connect from '../connect';
 import BeerQuality from './BeerQuality/BeerQuality';
 import ChristmasFont from '../ChristmasFont/ChristmasFont';
 
 class BeerReview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { beer: {}, vote: {} };
+		this.state = { vote: {} };
 		this.currentUserId = fire.auth().currentUser.uid;
-		this.beerId = this.props.match.params.beerId;
+		// this.beerId = this.props.match.params.beerId;
 		this.userVoteId = `votes/${this.beerId}/${this.currentUserId}`;
 	}
 
@@ -24,12 +25,12 @@ class BeerReview extends Component {
 	}
 
 	componentDidMount() {
-		fire.database()
-			.ref(`beer/${this.beerId}`)
-			.on('value', snapshot => {
-				const beer = { ...snapshot.val(), id: snapshot.key };
-				this.setState({ beer });
-			});
+		// fire.database()
+		// 	.ref(`beer/${this.beerId}`)
+		// 	.on('value', snapshot => {
+		// 		const beer = { ...snapshot.val(), id: snapshot.key };
+		// 		this.setState({ beer });
+		// 	});
 		fire.database()
 			.ref(this.userVoteId)
 			.on('value', snapshot => {
@@ -40,8 +41,8 @@ class BeerReview extends Component {
 	}
 
 	render() {
-		const { brand, name, year } = this.state.beer;
-		const defaultImage = "https://bilder.vinmonopolet.no/bottle.png";
+		const defaultImage = 'https://bilder.vinmonopolet.no/bottle.png';
+		const { brand, name, year, image = defaultImage } = this.props.beer;
 		return (
 			<div>
 				<div className="BeerReview_beerTitle">
@@ -50,7 +51,8 @@ class BeerReview extends Component {
 				</div>
 				<div className="BeerReview_container">
 					<div>
-						<img className="BeerReview_beerImage" src={this.state.beer.image || defaultImage} alt="beerimage" />
+						<img className="BeerReview_beerImage" src={image}
+						     alt="beerimage" />
 					</div>
 					<div>
 						<BeerQuality rating={this.state.vote.lukt}
@@ -76,4 +78,7 @@ class BeerReview extends Component {
 	}
 }
 
-export default BeerReview;
+const firebaseRef = props => `beer/${props.match.params.beerId}`;
+const setStateFromSnapshot = snapshot => () => ({ beer: { ...snapshot.val(), id: snapshot.key } });
+
+export default connect('beer', firebaseRef, setStateFromSnapshot)(BeerReview);

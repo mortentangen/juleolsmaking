@@ -37,7 +37,7 @@ class Login extends Component {
 					<Redirect to={from} />
 				)
 			} else {
-				return <Redirect to="/reviewer" />
+				return <Redirect to="/userboard" />
 			}
 		}
 		return (

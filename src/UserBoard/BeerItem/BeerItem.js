@@ -11,7 +11,7 @@ const BeerItem = ({ beer }) =>
 		</div>
 		<div className="BeerItem_row">
 			<div className="BeerItem_description">
-				<Link to={`/reviewer/${beer.id}`}>
+				<Link to={`/userboard/${beer.id}`}>
 					<div className="BeerItem_beerName">
 						<div>{beer.brand}</div>
 						<div> {beer.name} ({beer.year})</div>
