@@ -57,10 +57,6 @@ class BeerReview extends Component {
 						             setRate={(rating) => this.rate('lukt', rating)}>
 							Lukt
 						</BeerQuality>
-						<BeerQuality rating={this.state.vote.utseende}
-						             setRate={(rating) => this.rate('utseende', rating)}>
-							Utseende
-						</BeerQuality>
 						<BeerQuality rating={this.state.vote.smak}
 						             setRate={(rating) => this.rate('smak', rating)}>
 							Smak

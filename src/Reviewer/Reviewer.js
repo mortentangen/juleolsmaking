@@ -13,11 +13,11 @@ class Reviewer extends Component {
 	}
 
 	componentDidMount() {
-		/* Create reference to messages in Firebase Database */
-		let messagesRef = fire.database().ref('beer');
+		const messagesRef = fire.database().ref('beer');
 		messagesRef.on('value', snapshot => {
-			/* Update React state when message is added at Firebase Database */
-			this.setState({beerList: snapshot.val().filter(Boolean)});
+			this.setState({
+				beerList: Object.entries(snapshot.val()).map(keyValue => ({ id: keyValue[0], ...keyValue[1] }))
+			});
 		})
 	}
 
