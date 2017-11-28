@@ -5,8 +5,7 @@ import Stars from '../../Stars/Stars';
 import './UserBeerItem.css';
 import connect from '../../connect';
 import fire from '../../fire';
-
-const totalScore = votes => Object.values(votes).reduce((a, b) => a + b, 0);
+import { getUserScore } from '../../vote-service';
 
 const UserBeerItem = ({ beer, votes }) =>
 	<div key={beer.id} className="UserBeerItem_container">
@@ -34,7 +33,7 @@ const UserBeerItem = ({ beer, votes }) =>
 			</div>
 		</div>
 		<div className="UserBeerItem_score">
-			<span>{totalScore(votes)}</span>
+			<span>{getUserScore(votes)}</span>
 			<span className="UserBeerItem_star"><Stars nr={1} size={32} /></span>
 		</div>
 	</div>;
