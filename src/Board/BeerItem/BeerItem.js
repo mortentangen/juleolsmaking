@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import BeerImage from '../../BeerImage/BeerImage';
 // TODO move stars
-import Stars from '../../UserBoard/UserBeerItem/Stars/Stars';
+import Stars from '../../Stars/Stars';
 import './BeerItem.css';
 
 const BeerItem = ({ beer }) =>

@@ -6,13 +6,18 @@ const connect = (topLevelEntity, ref, setStateFromSnapshot) => WrappedComponent 
 		constructor(props) {
 			super(props);
 			this.state = { [topLevelEntity]: {} }
+
 		}
 
 		componentDidMount() {
-			const messagesRef = fire.database().ref(ref(this.props));
-			messagesRef.on('value', snapshot => {
+			this.messagesRef = fire.database().ref(ref(this.props));
+			this.messagesRef.on('value', snapshot => {
 				this.setState(setStateFromSnapshot(snapshot));
 			})
+		}
+
+		componentWillUnmount () {
+			this.messagesRef.off('value');
 		}
 
 		render() {

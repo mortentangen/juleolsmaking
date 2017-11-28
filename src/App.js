@@ -14,6 +14,7 @@ import './App.css';
 
 class App extends Component {
 	render() {
+		console.log('currentUser', fire.auth().currentUser);
 		return (
 			<Router>
 				<div className="App">
