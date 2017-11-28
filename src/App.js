@@ -9,11 +9,10 @@ import UserBoard from './UserBoard/UserBoard';
 import BeerReview from './BeerReview/BeerReview';
 import Board from './Board/Board';
 import Login from './Login/Login';
-import { fire } from './fire';
+import fire from './fire';
 import './App.css';
 
 class App extends Component {
-
 	render() {
 		return (
 			<Router>

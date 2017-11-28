@@ -1,11 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { fire } from '../fire';
+import BeerItem from './BeerItem/BeerItem';
+
+const beerList = [
+	{
+		brand: 'Kinn',
+		name: 'Julefred',
+		year: '2017',
+		id: '1'
+	},
+	{
+		brand: 'Aass',
+		name: 'Juleøl premium',
+		year: '2017',
+		id: '2'
+	}
+];
 
 const Board = () =>
 	<div>
 		<Link to="/userboard">Delta</Link>
-		<div>Resultat kommer her {console.log('fire', fire)}</div>
+		{
+			beerList.map(beer =>
+				<BeerItem key={beer.id} beer={beer} />
+			)
+		}
 	</div>;
 
 export default Board;

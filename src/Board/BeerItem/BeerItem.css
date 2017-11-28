@@ -37,9 +37,8 @@
 	justify-content: center;
 }
 
-.BeerItem_detailedScore > div > span {
-	margin-right: 5px;
-	font-size: 14px;
+.BeerItem_individualScore {
+	line-height: 10px;
 }
 
 .BeerItem_star > span {

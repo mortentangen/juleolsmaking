@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import User from '../User/User';
-import BeerItem from './BeerItem/BeerItem';
+import UserBeerItem from './UserBeerItem/UserBeerItem';
 import './UserBoard.css'
 import connect from '../connect';
 
@@ -15,7 +15,7 @@ const UserBoard = ({ beer, history }) => {
 			<div>
 				{
 					beerList.map(beer =>
-						<BeerItem key={beer.id} beer={beer} />
+						<UserBeerItem key={beer.id} beer={beer} />
 					)
 				}
 			</div>

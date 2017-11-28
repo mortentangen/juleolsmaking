@@ -11,7 +11,7 @@ class BeerReview extends Component {
 		super(props);
 		this.state = { vote: {} };
 		this.currentUserId = fire.auth().currentUser.uid;
-		// this.beerId = this.props.match.params.beerId;
+		this.beerId = this.props.match.params.beerId;
 		this.userVoteId = `votes/${this.beerId}/${this.currentUserId}`;
 	}
 
