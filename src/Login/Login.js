@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fire, authProvider } from '../fire';
 import { Redirect } from 'react-router-dom'
+import { persistDataForNewUser } from '../user-service.js';
 import './Login.css';
 
 class Login extends Component {
@@ -14,12 +15,10 @@ class Login extends Component {
 		fire.auth()
 			.signInWithPopup(authProvider)
 			.then(result => {
-				const token = result.credential.accessToken;
-				const user = result.user;
+				const { user, credential: { accessToken } } = result;
 
-				console.log(token);
-				console.log(user);
-				console.log('this.setState', this.setState);
+				console.log('logged in user with token', user, accessToken);
+				persistDataForNewUser(user);
 				this.setState({ redirectToReferrer: true });
 			}).catch(error => {
 
