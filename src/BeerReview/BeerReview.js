@@ -32,7 +32,7 @@ class BeerReview extends Component {
 					<div><ChristmasFont>{name} ({year})</ChristmasFont></div>
 				</div>
 				<div className="BeerReview_container">
-					<div>
+					<div className="BeerReview_imageContainer">
 						<img className="BeerReview_beerImage" src={image}
 						     alt="beerimage" />
 					</div>

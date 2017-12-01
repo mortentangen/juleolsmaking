@@ -4,11 +4,20 @@
 	font-size: 20px;
 	padding: 30px 0;
 }
+
 .BeerReview_beerTitle {
 	font-size: 24px;
 }
+
+.BeerReview_imageContainer {
+	width: 105px;
+	margin: 0 40px 0 0;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 25px;
+}
+
 .BeerReview_beerImage {
 	height: 350px;
-	margin: 0 40px 0 0;
-	border-radius: 25px;
 }
