@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import User from '../User/User';
 import UserBeerItem from './UserBeerItem/UserBeerItem';
 import './UserBoard.css'
@@ -18,9 +17,6 @@ const UserBoard = ({ beer, history }) => {
 						<UserBeerItem key={beer.id} beer={beer} />
 					)
 				}
-			</div>
-			<div className="UserBoard_gotoResult">
-				<Link to="/board">Resultater</Link>
 			</div>
 		</div>
 	);

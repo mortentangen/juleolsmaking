@@ -1,13 +1,19 @@
 .UserBeerItem_container {
-	padding: 10px;
 	display: flex;
 	justify-content: center;
+}
+
+.UserBeerItem_innerContainer {
+	width: 360px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .UserBeerItem_beerImage {
 	/*min-width: 87px;*/
-	min-width: 60px;
+	flex: 0 0 60px;
 	width: 60px;
 	height: 60px;
 	background-color: white;
@@ -16,11 +22,10 @@
 }
 .UserBeerItem_beerImage > img {
 	height: 60px;
-	/*border-radius: 22px;*/
-	/*padding: 0 20px;*/
 }
 
 .UserBeerItem_beerName {
+	font-family: 'Lobster', Georgia, Times, serif;
 	max-width: 250px;
 	display: inline-block;
 	overflow: hidden;
@@ -32,20 +37,22 @@
 }
 
 .UserBeerItem_description {
-	min-width: 260px;
+	min-width: 225px;
 	margin-bottom: 5px;
 }
 
 .UserBeerItem_score {
-	min-width: 70px;
+	font-family: 'Lobster', Georgia, Times, serif;
+	min-width: 65px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .UserBeerItem_detailedScore > div > span {
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
 	margin-right: 5px;
-	font-size: 14px;
+	font-size: 11px;
 }
 
 .UserBeerItem_star > span {
