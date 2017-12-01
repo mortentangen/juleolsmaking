@@ -4,7 +4,7 @@ import BeerImage from '../../BeerImage/BeerImage';
 // TODO move stars
 import Stars from '../../Stars/Stars';
 import './BeerItem.css';
-import { getUserScore, getTotalScore } from '../../vote-service';
+import { getUserScore, getTotalBeerScore } from '../../vote-service';
 
 const BeerItem = ({ beer, votes }) =>
 	<div key={beer.id} className="BeerItem_container">
@@ -23,13 +23,13 @@ const BeerItem = ({ beer, votes }) =>
 			<div className="BeerItem_individualScore">
 				{
 					Object.entries(votes).map(([key, value]) =>
-						<div key={key}><span>{key}</span><Stars nr={getUserScore(value)} size={14} /></div>
+						<div key={key}><span>{key.substring(0, 3)}</span><Stars nr={getUserScore(value)} size={14} /></div>
 					)
 				}
 			</div>
 		</div>
 		<div className="BeerItem_score">
-			<span>{getTotalScore(votes)}</span>
+			<span>{getTotalBeerScore(votes)}</span>
 			<span className="BeerItem_star"><Stars nr={1} /></span>
 		</div>
 	</div>;

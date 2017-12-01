@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import BeerItem from './BeerItem/BeerItem';
 import connect from '../connect';
+import { sortByScore } from '../vote-service';
 
 const Board = ({ beer, votes }) => {
-	const beerList = Object.entries(beer).map(keyValue => ({ id: keyValue[0], ...keyValue[1] }));
-	console.log('votes', votes);
+	const sorteredBeer = sortByScore(votes);
 	return (
 		<div>
 			<Link to="/userboard">Delta</Link>
 			{
-				beerList.map(beer =>
-					<BeerItem key={beer.id} beer={beer} votes={votes[beer.id] || {}} />
+				sorteredBeer.map(({ beerId }) =>
+					<BeerItem key={beerId} beer={beer[beerId]} votes={votes[beerId] || {}} />
 				)
 			}
 		</div>
