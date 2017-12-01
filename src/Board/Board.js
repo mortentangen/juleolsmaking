@@ -21,5 +21,6 @@ const Board = ({ beer, votes }) => {
 const setStateFromSnapshotForBeer = snapshot => () => ({ beer: snapshot.val() });
 const setStateFromSnapshotForVotes = snapshot => () => ({ votes: snapshot.val() });
 
-export default connect('votes', () => 'votes', setStateFromSnapshotForVotes)
-(connect('beer', () => 'beer', setStateFromSnapshotForBeer)(Board));
+export default connect('votes', () => 'votes', setStateFromSnapshotForVotes)(
+	connect('beer', () => 'beer', setStateFromSnapshotForBeer)(Board)
+);
