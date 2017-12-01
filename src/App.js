@@ -9,6 +9,7 @@ import UserBoard from './UserBoard/UserBoard';
 import BeerReview from './BeerReview/BeerReview';
 import Board from './Board/Board';
 import Login from './Login/Login';
+import Welcome from './Welcome/Welcome';
 import fire from './fire';
 import './App.css';
 
@@ -30,7 +31,8 @@ class App extends Component {
 							       routeProps =>
 								       <Login {...routeProps} />
 						       } />
-						<Route path="/" component={Board} exact />
+						<Route path="/board" component={Board} exact />
+						<Route path="/" component={Welcome} exact />
 					</Switch>
 				</div>
 			</Router>

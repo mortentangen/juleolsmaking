@@ -20,7 +20,7 @@ const UserBoard = ({ beer, history }) => {
 				}
 			</div>
 			<div className="UserBoard_gotoResult">
-				<Link to="/">Resultater</Link>
+				<Link to="/board">Resultater</Link>
 			</div>
 		</div>
 	);
