@@ -12,7 +12,7 @@ const UserBoard = ({ beer, history }) => {
 			<div className="UserBoard_user">
 				<User history={history} />
 			</div>
-			<div>
+			<div className="UserBoard_list">
 				{
 					beerList.map(beer =>
 						<UserBeerItem key={beer.id} beer={beer} />

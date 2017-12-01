@@ -6,12 +6,18 @@
 }
 
 .UserBeerItem_beerImage {
-	min-width: 87px;
+	/*min-width: 87px;*/
+	min-width: 60px;
+	width: 60px;
+	height: 60px;
+	background-color: white;
+	border-radius: 50%;
+	overflow: hidden;
 }
 .UserBeerItem_beerImage > img {
-	height: 70px;
-	border-radius: 22px;
-	padding: 0 20px;
+	height: 60px;
+	/*border-radius: 22px;*/
+	/*padding: 0 20px;*/
 }
 
 .UserBeerItem_beerName {
@@ -31,7 +37,7 @@
 }
 
 .UserBeerItem_score {
-	min-width: 100px;
+	min-width: 70px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
