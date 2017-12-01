@@ -8,7 +8,8 @@
     "react-dom": "^16.1.1",
     "react-rater": "^0.4.7",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "react-snow-effect": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

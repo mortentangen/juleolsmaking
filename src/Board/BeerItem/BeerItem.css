@@ -2,19 +2,30 @@
 	padding: 10px;
 	display: flex;
 	justify-content: center;
+}
+
+.BeerItem_innerContainer {
+	width: 360px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .BeerItem_beerImage {
-	min-width: 87px;
+	flex: 0 0 60px;
+	width: 60px;
+	height: 60px;
+	background-color: white;
+	border-radius: 50%;
+	overflow: hidden;
 }
 .BeerItem_beerImage > img {
-	height: 70px;
-	border-radius: 22px;
-	padding: 0 20px;
+	height: 60px;
 }
 
 .BeerItem_beerName {
+	font-family: 'Lobster', Georgia, Times, serif;
 	max-width: 250px;
 	display: inline-block;
 	overflow: hidden;
@@ -31,7 +42,8 @@
 }
 
 .BeerItem_score {
-	min-width: 100px;
+	font-family: 'Lobster', Georgia, Times, serif;
+	min-width: 65px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
