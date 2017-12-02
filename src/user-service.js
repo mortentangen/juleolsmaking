@@ -5,7 +5,7 @@ const persistDataForNewUser = (user) => {
 	fire.database()
 		.ref('users')
 		.update({
-			[uid]: { displayName, email, photoURL }
+			[uid]: { uid, displayName, email, photoURL }
 		});
 };
 

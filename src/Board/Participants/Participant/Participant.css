@@ -1,0 +1,16 @@
+.Participant_container {
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 10px;
+}
+
+.Participant_googlePhoto {
+	border-radius: 50%;
+	overflow: hidden;
+	height: 50px;
+	width: 50px;
+}

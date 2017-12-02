@@ -1,5 +1,6 @@
 import React from 'react';
 import fire from '../fire';
+import './User.css';
 
 const signOut = (history) => {
 	fire.auth().signOut().then(() => {
@@ -12,7 +13,7 @@ const signOut = (history) => {
 const User = ({ history }) => (
 	<div className="User_container">
 		<button className="buttonAsLink" onClick={() => signOut(history)}>
-			<img className="googlePhoto" src={fire.auth().currentUser.photoURL} alt="profilbilde" />
+			<img className="User_googlePhoto" src={fire.auth().currentUser.photoURL} alt="profilbilde" />
 		</button>
 	</div>
 );
