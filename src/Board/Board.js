@@ -21,7 +21,7 @@ class Board extends Component {
 			color: colors[index],
 			...user
 		}));
-		const sorteredBeer = sortByScore(votes);
+		const sortedBeers = sortByScore(votes);
 		return (
 			<div>
 				<div className="Board_snow">
@@ -30,7 +30,7 @@ class Board extends Component {
 				<Participants usersWithColors={usersWithColors} />
 				<div>
 					{
-						sorteredBeer.map(({ beerId }) =>
+						sortedBeers.map(({ beerId }) =>
 							<BeerItem key={beerId}
 							          beer={beer[beerId]}
 							          votes={votes[beerId] || {}}
