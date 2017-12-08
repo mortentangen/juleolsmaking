@@ -6,7 +6,7 @@ import { sortByScore } from '../vote-service';
 import Snow from 'react-snow-effect';
 import './Board.css';
 
-const colors = ['#0D5901', '#ccc', '#cc9900'];
+const colors = ['#0D5901', '#ccc', '#cc9900', 'black'];
 
 class Board extends Component {
 	constructor(props) {
@@ -21,7 +21,7 @@ class Board extends Component {
 			color: colors[index],
 			...user
 		}));
-		const sortedBeers = sortByScore(votes);
+		const sortedBeers = votes ? sortByScore(votes) : [];
 		return (
 			<div>
 				<div className="Board_snow">
