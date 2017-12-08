@@ -1,8 +1,8 @@
 import React from 'react';
-import User from '../User/User';
+import User from '../../modules/User/User';
 import UserBeerItem from './UserBeerItem/UserBeerItem';
 import './UserBoard.css'
-import connect from '../connect';
+import connect from '../../connect';
 
 const UserBoard = ({ beer, history }) => {
 	const beerList = Object.entries(beer).map(keyValue => ({ id: keyValue[0], ...keyValue[1] }));

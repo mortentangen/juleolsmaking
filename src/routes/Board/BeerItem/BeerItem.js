@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import BeerImage from '../../BeerImage/BeerImage';
+import BeerImage from '../../../modules/BeerImage/BeerImage';
 // TODO move stars
-import Stars from '../../Stars/Stars';
+import Stars from '../../../modules/Stars/Stars';
 import './BeerItem.css';
-import { getUserScore, getTotalBeerScore } from '../../vote-service';
+import { getUserScore, getTotalBeerScore } from '../../../vote-service';
 
 const BeerItem = ({ beer, votes, usersWithColors }) =>
 	<div key={beer.id} className="BeerItem_container">

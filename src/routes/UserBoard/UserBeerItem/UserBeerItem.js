@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import BeerImage from '../../BeerImage/BeerImage';
-import Stars from '../../Stars/Stars';
+import BeerImage from '../../../modules/BeerImage/BeerImage';
+import Stars from '../../../modules/Stars/Stars';
 import './UserBeerItem.css';
-import connect from '../../connect';
-import fire from '../../fire';
-import { getUserScore } from '../../vote-service';
+import connect from '../../../connect';
+import fire from '../../../fire';
+import { getUserScore } from '../../../vote-service';
 
 const UserBeerItem = ({ beer, votes }) =>
 	<div className="UserBeerItem_container">

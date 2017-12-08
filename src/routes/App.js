@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom'
 import UserBoard from './UserBoard/UserBoard';
 import BeerReview from './BeerReview/BeerReview';
-import Board from './Board/Board';
+import BoardContainer from './Board/BoardContainer';
 import Login from './Login/Login';
 import Welcome from './Welcome/Welcome';
-import fire from './fire';
+import fire from '../fire';
 import './App.css';
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
 							       routeProps =>
 								       <Login {...routeProps} />
 						       } />
-						<Route path="/board" component={Board} exact />
+						<Route path="/board" component={BoardContainer} exact />
 						<Route path="/" component={Welcome} exact />
 					</Switch>
 				</div>

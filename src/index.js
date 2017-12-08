@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './routes/App';
 import registerServiceWorker from './registerServiceWorker';
 import { fire } from './fire';
 

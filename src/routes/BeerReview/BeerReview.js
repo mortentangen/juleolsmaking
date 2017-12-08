@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { fire } from '../fire';
+import { fire } from '../../fire';
 import './BeerReview.css';
 
-import connect from '../connect';
+import connect from '../../connect';
 import BeerQuality from './BeerQuality/BeerQuality';
-import ChristmasFont from '../ChristmasFont/ChristmasFont';
+import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
 
 const getUserVoteRef = beerId => `votes/${beerId}/${fire.auth().currentUser.uid}`;
 

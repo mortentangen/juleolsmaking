@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { fire, authProvider } from '../fire';
+import { fire, authProvider } from '../../fire';
 import { Redirect } from 'react-router-dom'
-import { persistDataForNewUser } from '../user-service.js';
+import { persistDataForNewUser } from '../../user-service.js';
 import './Login.css';
 
 class Login extends Component {

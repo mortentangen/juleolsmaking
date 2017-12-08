@@ -1,5 +1,5 @@
 import React from 'react';
-import fire from '../fire';
+import fire from '../../fire';
 import './User.css';
 
 const signOut = (history) => {
