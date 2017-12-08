@@ -17,7 +17,7 @@ const BeerItem = ({ beer, votes, usersWithColors }) =>
 					<Link to={`/userboard/${beer.id}`}>
 						<div className="BeerItem_beerName">
 							<div>{beer.brand}</div>
-							<div> {beer.name} ({beer.year})</div>
+							<div> {beer.name}</div>
 						</div>
 					</Link>
 				</div>
