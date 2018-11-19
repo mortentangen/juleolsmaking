@@ -21,7 +21,6 @@ const connect = (topLevelEntity, ref, setStateFromSnapshot) => WrappedComponent 
 		}
 
 		render() {
-			console.log('connect.state', this.state);
 			return <WrappedComponent {...this.props} {...{ [topLevelEntity]: this.state[topLevelEntity]}} />;
 		}
 	}

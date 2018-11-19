@@ -6,6 +6,7 @@ import connect from '../../connect';
 
 const UserBoard = ({ beer, history }) => {
 	const beerList = Object.entries(beer).map(keyValue => ({ id: keyValue[0], ...keyValue[1] }));
+	const beerList2018 = beerList.filter(beer => beer.yearTasted === '2018');
 	return (
 		<div>
 			<div className="UserBoard_user">
@@ -13,7 +14,7 @@ const UserBoard = ({ beer, history }) => {
 			</div>
 			<div className="UserBoard_list">
 				{
-					beerList.map(beer =>
+					beerList2018.map(beer =>
 						<UserBeerItem key={beer.id} beer={beer} />
 					)
 				}
