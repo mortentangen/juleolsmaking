@@ -1,6 +1,12 @@
 {
   "rules": {
     ".read": true,
-    ".write": true
+    "votes": {
+      "$beer_id": {
+        "$user_id": {
+          ".write": "auth.uid === $user_id"
+        }
+      }
+    }
   }
 }

@@ -1,92 +1,121 @@
 {
   "beer" : {
-    "1_trdhj_mikrobryggeri" : {
+    "2017_trdhj_mikrobryggeri" : {
       "brand" : "Trondhjem Mikrobryggeri",
       "image" : "http://www.telemarkmikrobryggeri.no/uploads/1/4/9/6/14968522/trondhjem-gledeligjul_orig.jpg",
       "name" : "Gledelig Jul",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "2_cervisiam" : {
+    "2017_cervisiam" : {
       "brand" : "Cervisiam",
       "image" : "https://bilder.vinmonopolet.no/cache/300x300-0/7976402-1.jpg",
       "name" : "Chocolate Salty Christmas Ball",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "3_kinn" : {
+    "2017_kinn" : {
       "brand" : "Kinn",
       "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/9520801-1.jpg",
       "name" : "Julefred",
-      "year" : "2016"
+      "year" : "2016",
+      "yearTasted": "2017"
     },
-    "4_aja_julekvad" : {
+    "2017_aja_julekvad" : {
       "brand" : "Aja",
       "name" : "Julekvad",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "5_fatherchristmasmilk" : {
+    "2017_fatherchristmasmilk" : {
       "brand" : "Hosle bodbryggeri",
       "name" : "Father Christmas Milk",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "6_aegir_eldir" : {
+    "2017_aegir_eldir" : {
       "brand" : "Ægir",
       "image" : "https://presizely.abcmedia.no/980x%2Cprog%2Cadsh%2Cq60/https://abcnyheter.drpublish.aptoma.no/out/images/article//2017/11/23/195350144/1/artikkel_50_prosent/4445578.jpg",
       "name" : "Eldir Julebrygg",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "7_to_ol" : {
+    "2017_to_ol" : {
       "brand" : "To øl",
       "image" : "https://cdn.shopify.com/s/files/1/0227/0581/products/To_Ol_Jule_Maelk_Super_Milk_Stout_375ML_BTL.png?v=1507902867",
       "name" : "Jule Mælk",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "8_ringnes_julebokk" : {
+    "2017_ringnes_julebokk" : {
       "brand" : "Ringnes",
       "image" : "http://gfx.dagbladet.no/pub/artikkel/5/55/555/555900/r320_1227869007.jpg",
       "name" : "Julebokk",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_aass_premium" : {
+    "2017_aass_premium" : {
       "brand" : "Aass",
       "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/1824002-1.jpg",
       "name" : "Juleøl Premium",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_aass_vellagret" : {
+    "2017_aass_vellagret" : {
       "brand" : "Aass",
       "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/1824102-1.jpg",
       "name" : "Juleøl Vellagret",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_avec" : {
+    "2017_avec" : {
       "brand" : "Berentsen",
       "image" : "http://eirik.indregaard.net/wp-content/uploads/juleav.jpg",
       "name" : "Jule Avec",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_julefnugg" : {
+    "2017_julefnugg" : {
       "brand" : "Berentsen",
       "image" : "https://dbstatic.no/61312922.jpg?imageId=61312922&x=0&y=0&cropw=100&croph=100&width=512&height=768",
       "name" : "Julefnugg",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_kinntomasmesse" : {
+    "2017_kinntomasmesse" : {
       "brand" : "Kinn",
       "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/194301-1.jpg",
       "name" : "Tomasmesse",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_schneeweisse" : {
+    "2017_schneeweisse" : {
       "brand" : "Erdinger",
       "image" : "https://dxjcdxuv6chk2.cloudfront.net/assets/biere/schneeweisse/gebinde-schneeweisse-flasche.png",
       "name" : "SchneeWeisse",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
     },
-    "9_sinterklaas" : {
+    "2017_sinterklaas" : {
       "brand" : "7 Fjell Bryggeri",
       "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/6496102-1.jpg",
       "name" : "Sinterklaas",
-      "year" : "2017"
+      "year" : "2017",
+      "yearTasted": "2017"
+    },
+    "2018_schneeweisse" : {
+      "brand" : "Erdinger",
+      "image" : "https://dxjcdxuv6chk2.cloudfront.net/assets/biere/schneeweisse/gebinde-schneeweisse-flasche.png",
+      "name" : "SchneeWeisse",
+      "year" : "2018",
+      "yearTasted": "2018"
+    },
+    "2018_sinterklaas" : {
+      "brand" : "7 Fjell Bryggeri",
+      "image" : "https://bilder.vinmonopolet.no/cache/1200x1200-0/6496102-1.jpg",
+      "name" : "Sinterklaas",
+      "year" : "2018",
+      "yearTasted": "2018"
     }
   },
   "users" : {
@@ -107,7 +136,7 @@
     }
   },
   "votes" : {
-    "1_trdhj_mikrobryggeri" : {
+    "2017_trdhj_mikrobryggeri" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 4,
@@ -127,7 +156,7 @@
         "smak" : 3
       }
     },
-    "2_cervisiam" : {
+    "2017_cervisiam" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 1,
         "lukt" : 2,
@@ -147,7 +176,7 @@
         "smak" : 2
       }
     },
-    "3_kinn" : {
+    "2017_kinn" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 4,
         "lukt" : 4,
@@ -167,7 +196,7 @@
         "smak" : 4
       }
     },
-    "4_aja_julekvad" : {
+    "2017_aja_julekvad" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 2,
@@ -187,7 +216,7 @@
         "smak" : 3
       }
     },
-    "5_fatherchristmasmilk" : {
+    "2017_fatherchristmasmilk" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 2,
         "lukt" : 3,
@@ -207,7 +236,7 @@
         "smak" : 4
       }
     },
-    "6_aegir_eldir" : {
+    "2017_aegir_eldir" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 1,
@@ -227,7 +256,7 @@
         "smak" : 5
       }
     },
-    "7_to_ol" : {
+    "2017_to_ol" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 2,
@@ -247,7 +276,7 @@
         "smak" : 4
       }
     },
-    "8_ringnes_julebokk" : {
+    "2017_ringnes_julebokk" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 2,
         "lukt" : 4,
@@ -267,7 +296,7 @@
         "smak" : 5
       }
     },
-    "9_aass_premium" : {
+    "2017_aass_premium" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 3,
@@ -287,7 +316,7 @@
         "smak" : 4
       }
     },
-    "9_aass_vellagret" : {
+    "2017_aass_vellagret" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 4,
@@ -307,7 +336,7 @@
         "smak" : 5
       }
     },
-    "9_avec" : {
+    "2017_avec" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 2,
@@ -327,7 +356,7 @@
         "smak" : 4
       }
     },
-    "9_julefnugg" : {
+    "2017_julefnugg" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 4,
@@ -347,7 +376,7 @@
         "smak" : 4
       }
     },
-    "9_kinntomasmesse" : {
+    "2017_kinntomasmesse" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 2,
         "lukt" : 4,
@@ -367,7 +396,7 @@
         "smak" : 4
       }
     },
-    "9_schneeweisse" : {
+    "2017_schneeweisse" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 3,
         "lukt" : 2,
@@ -387,7 +416,7 @@
         "smak" : 5
       }
     },
-    "9_sinterklaas" : {
+    "2017_sinterklaas" : {
       "0mCy9gt6zcRXvcNGKTV8kgDupma2" : {
         "ettersmak" : 2,
         "lukt" : 3,
