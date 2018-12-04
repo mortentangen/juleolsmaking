@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
 import fire from './fire';
 
-const connect = (topLevelEntity, ref, setStateFromSnapshot) => WrappedComponent => {
-	return class ContainerComponent extends Component {
-		constructor(props) {
-			super(props);
-			this.state = { [topLevelEntity]: {} }
+const connect = (
+  topLevelEntity,
+  ref,
+  setStateFromSnapshot
+) => WrappedComponent => {
+  return class ContainerComponent extends Component {
+    constructor(props) {
+      super(props);
+      this.state = { [topLevelEntity]: {} };
+    }
 
-		}
+    componentDidMount() {
+      this.messagesRef = fire.database().ref(ref(this.props));
+      this.messagesRef.on('value', snapshot => {
+        this.setState(setStateFromSnapshot(snapshot));
+      });
+    }
 
-		componentDidMount() {
-			this.messagesRef = fire.database().ref(ref(this.props));
-			this.messagesRef.on('value', snapshot => {
-				this.setState(setStateFromSnapshot(snapshot));
-			})
-		}
+    componentWillUnmount() {
+      this.messagesRef.off('value');
+    }
 
-		componentWillUnmount () {
-			this.messagesRef.off('value');
-		}
-
-		render() {
-			return <WrappedComponent {...this.props} {...{ [topLevelEntity]: this.state[topLevelEntity]}} />;
-		}
-	}
+    render() {
+      return (
+        <WrappedComponent
+          {...this.props}
+          {...{ [topLevelEntity]: this.state[topLevelEntity] }}
+        />
+      );
+    }
+  };
 };
 
 export default connect;

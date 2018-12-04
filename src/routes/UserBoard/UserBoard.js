@@ -1,15 +1,15 @@
-import React from "react";
-import User from "../../modules/User/User";
-import UserBeerItem from "./UserBeerItem/UserBeerItem";
-import "./UserBoard.css";
-import connect from "../../connect";
+import React from 'react';
+import User from '../../modules/User/User';
+import UserBeerItem from './UserBeerItem/UserBeerItem';
+import './UserBoard.css';
+import connect from '../../connect';
 
 const UserBoard = ({ beer, history }) => {
   const beerList = Object.entries(beer).map(keyValue => ({
     id: keyValue[0],
     ...keyValue[1]
   }));
-  const beerList2018 = beerList.filter(beer => beer.yearTasted === "2018");
+  const beerList2018 = beerList.filter(beer => beer.yearTasted === '2018');
   return (
     <div>
       <div className="UserBoard_user">
@@ -29,7 +29,7 @@ const setStateFromSnapshot = snapshot => (prevState, props) => ({
 });
 
 export default connect(
-  "beer",
-  () => "beer",
+  'beer',
+  () => 'beer',
   setStateFromSnapshot
 )(UserBoard);
