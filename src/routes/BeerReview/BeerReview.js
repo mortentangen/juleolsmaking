@@ -11,11 +11,12 @@ const getUserVoteRef = beerId =>
 
 class BeerReview extends Component {
   rate(aspect, rate) {
+    const { beerId } = this.props.match.params;
     if (rate.type === 'click') {
       console.log('set rating:', aspect, rate.rating);
       fire
         .database()
-        .ref(`${getUserVoteRef(this.props.match.params.beerId)}`)
+        .ref(`${getUserVoteRef(beerId)}`)
         .update({
           [aspect]: rate.rating
         });
