@@ -6,7 +6,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import UserBoard from './UserBoard/UserBoard';
-import RateBeer from './RateBeer/RateBeer';
+import RateBeerContainer from './RateBeer/RateBeerContainer';
 import BoardContainer from './Board/BoardContainer';
 import Login from './Login/Login';
 import Welcome from './Welcome/Welcome';
@@ -23,7 +23,7 @@ class App extends Component {
             <PrivateRoute path="/userboard/:currentYear" component={UserBoard} exact />
             <PrivateRoute
               path="/userboard/:currentYear/:beerId"
-              component={RateBeer}
+              component={RateBeerContainer}
               exact
             />
             <Route

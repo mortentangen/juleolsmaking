@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import { fire } from '../../fire';
-import './RateBeer.css';
-
-import connect from '../../connect';
-import BeerCharacteristic from './BeerQuality/BeerCharacteristic';
+import BeerCharacteristic from './BeerCharacteristic/BeerCharacteristic';
 import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
 
-const getUserVoteRef = (currentYear, beerId) =>
-  `votes/${currentYear}/${beerId}/${fire.auth().currentUser.uid}`;
+import './RateBeer.css';
 
 class RateBeer extends Component {
   rate(aspect, rate) {
+    const { saveRating } = this.props;
     const { currentYear, beerId } = this.props.match.params;
     if (rate.type === 'click') {
       console.log('set rating:', aspect, rate.rating);
-      fire
-        .database()
-        .ref(`${getUserVoteRef(currentYear, beerId)}`)
-        .update({
-          [aspect]: rate.rating
-        });
+      saveRating(currentYear, beerId, aspect, rate);
     }
   }
 
   render() {
     const defaultImage = 'https://bilder.vinmonopolet.no/bottle.png';
+    console.log('props', this.props);
     const { brand, name, year, image = defaultImage } = this.props.beer;
     const {
       lukt = 0,
@@ -80,27 +72,4 @@ class RateBeer extends Component {
   }
 }
 
-const firebaseBeerRef = props => `beer/${props.match.params.beerId}`;
-const setStateFromSnapshotForBeer = snapshot => () => ({
-  beer: { ...snapshot.val(), id: snapshot.key }
-});
-
-const firebaseVoteRef = props => {
-  const {currentYear, beerId} = props.match.params;
-  return getUserVoteRef(currentYear, beerId);
-};
-const setStateFromSnapshotForVote = snapshot => () => ({
-  vote: snapshot.val() || {}
-});
-
-export default connect(
-  'vote',
-  firebaseVoteRef,
-  setStateFromSnapshotForVote
-)(
-  connect(
-    'beer',
-    firebaseBeerRef,
-    setStateFromSnapshotForBeer
-  )(RateBeer)
-);
+export default RateBeer;
