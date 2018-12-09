@@ -6,7 +6,7 @@ import Stars from '../../../modules/Stars/Stars';
 import './BeerItem.css';
 import { getUserScore, getTotalBeerScore } from '../../../vote-service';
 
-const BeerItem = ({ beer, votes, usersWithColors }) => (
+const BeerItem = ({ beer, votes, usersWithColors, currentYear }) => (
   <div key={beer.id} className="BeerItem_container">
     <div className="BeerItem_innerContainer">
       <div className="BeerItem_beerImage">
@@ -14,7 +14,7 @@ const BeerItem = ({ beer, votes, usersWithColors }) => (
       </div>
       <div className="BeerItem_row">
         <div className="BeerItem_description">
-          <Link to={`/userboard/${beer.id}`}>
+          <Link to={`/userboard/${currentYear}/${beer.id}`}>
             <div className="BeerItem_beerName">
               <div>{beer.brand}</div>
               <div> {beer.name}</div>

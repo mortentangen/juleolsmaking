@@ -20,9 +20,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <PrivateRoute path="/userboard" component={UserBoard} exact />
+            <PrivateRoute path="/userboard/:currentYear" component={UserBoard} exact />
             <PrivateRoute
-              path="/userboard/:beerId"
+              path="/userboard/:currentYear/:beerId"
               component={BeerReview}
               exact
             />
@@ -30,7 +30,7 @@ class App extends Component {
               path="/login"
               render={routeProps => <Login {...routeProps} />}
             />
-            <Route path="/board/:year" component={BoardContainer} exact />
+            <Route path="/board/:currentYear" component={BoardContainer} exact />
             <Route path="/" component={Welcome} exact />
           </Switch>
         </div>

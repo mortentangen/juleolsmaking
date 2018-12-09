@@ -4,20 +4,28 @@ import UserBeerItem from './UserBeerItem/UserBeerItem';
 import './UserBoard.css';
 import connect from '../../connect';
 
-const UserBoard = ({ beer, history }) => {
-  const beerList = Object.entries(beer).map(keyValue => ({
-    id: keyValue[0],
-    ...keyValue[1]
-  }));
-  const beerList2018 = beerList.filter(beer => beer.yearTasted === '2018');
+const UserBoard = ({
+  beer,
+  history,
+  match: {
+    params: { currentYear }
+  }
+}) => {
+  const beerList = Object.entries(beer)
+    .map(keyValue => ({
+      id: keyValue[0],
+      ...keyValue[1]
+    }))
+    .filter(beer => beer.yearTasted === currentYear);
+
   return (
     <div>
       <div className="UserBoard_user">
         <User history={history} />
       </div>
       <div className="UserBoard_list">
-        {beerList2018.map(beer => (
-          <UserBeerItem key={beer.id} beer={beer} />
+        {beerList.map(beer => (
+          <UserBeerItem key={beer.id} beer={beer} currentYear={currentYear} />
         ))}
       </div>
     </div>

@@ -16,14 +16,15 @@ class BoardContainer extends Component {
 
   render() {
     const { beer, votes, users } = this.props;
-    const { year } = this.props.match.params;
+    const { currentYear } = this.props.match.params;
     return (
       <Board
         beer={beer}
-        votesForYear={votes[year]}
+        votesForYear={votes[currentYear]}
         users={users}
         colors={colors}
         shouldSnow={this.state.snow}
+        currentYear={currentYear}
       />
     );
   }

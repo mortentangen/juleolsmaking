@@ -7,9 +7,9 @@ import connect from '../../../connect';
 import fire from '../../../fire';
 import { getUserScore } from '../../../vote-service';
 
-const UserBeerItem = ({ beer, votes }) => (
+const UserBeerItem = ({ beer, votes, currentYear }) => (
   <div className="UserBeerItem_container">
-    <Link to={`/userboard/${beer.id}`}>
+    <Link to={`/userboard/${currentYear}/${beer.id}`}>
       <div key={beer.id} className="UserBeerItem_innerContainer">
         <div className="UserBeerItem_beerImage">
           <BeerImage image={beer.image} />
@@ -51,7 +51,8 @@ const UserBeerItem = ({ beer, votes }) => (
   </div>
 );
 
-const ref = ({ beer }) => `votes/${beer.id}/${fire.auth().currentUser.uid}`;
+const ref = ({ currentYear, beer }) =>
+  `votes/${currentYear}/${beer.id}/${fire.auth().currentUser.uid}`;
 
 const setStateFromSnapshot = snapshot => (prevState, props) => ({
   votes: snapshot.val() || {}

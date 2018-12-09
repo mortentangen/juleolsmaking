@@ -6,13 +6,14 @@ import Snow from 'react-snow-effect';
 import getUsersWithVotes from './get-users-with-votes';
 import './Board.css';
 
-const Board = ({ beer, votesForYear, users, colors, shouldSnow }) => {
+const Board = ({ beer, votesForYear, users, colors, shouldSnow, currentYear }) => {
   const usersWithVotes = getUsersWithVotes(users, votesForYear);
   const usersWithColors = Object.values(usersWithVotes).map((user, index) => ({
     color: colors[index],
     ...user
   }));
   const sortedBeers = votesForYear ? sortByScore(votesForYear) : [];
+  
   return (
     <div>
       <div className="Board_snow">{shouldSnow && <Snow />}</div>
@@ -24,6 +25,7 @@ const Board = ({ beer, votesForYear, users, colors, shouldSnow }) => {
             beer={beer[beerId]}
             votes={votesForYear[beerId] || {}}
             usersWithColors={usersWithColors}
+            currentYear={currentYear}
           />
         ))}
       </div>

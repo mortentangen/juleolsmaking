@@ -6,17 +6,17 @@ import connect from '../../connect';
 import BeerQuality from './BeerQuality/BeerQuality';
 import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
 
-const getUserVoteRef = beerId =>
-  `votes/${beerId}/${fire.auth().currentUser.uid}`;
+const getUserVoteRef = (currentYear, beerId) =>
+  `votes/${currentYear}/${beerId}/${fire.auth().currentUser.uid}`;
 
 class BeerReview extends Component {
   rate(aspect, rate) {
-    const { beerId } = this.props.match.params;
+    const { currentYear, beerId } = this.props.match.params;
     if (rate.type === 'click') {
       console.log('set rating:', aspect, rate.rating);
       fire
         .database()
-        .ref(`${getUserVoteRef(beerId)}`)
+        .ref(`${getUserVoteRef(currentYear, beerId)}`)
         .update({
           [aspect]: rate.rating
         });
@@ -86,7 +86,8 @@ const setStateFromSnapshotForBeer = snapshot => () => ({
 });
 
 const firebaseVoteRef = props => {
-  return getUserVoteRef(props.match.params.beerId);
+  const {currentYear, beerId} = props.match.params;
+  return getUserVoteRef(currentYear, beerId);
 };
 const setStateFromSnapshotForVote = snapshot => () => ({
   vote: snapshot.val() || {}
