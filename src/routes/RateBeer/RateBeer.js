@@ -3,7 +3,7 @@ import { fire } from '../../fire';
 import './RateBeer.css';
 
 import connect from '../../connect';
-import BeerQuality from './BeerQuality/BeerQuality';
+import BeerCharacteristic from './BeerQuality/BeerCharacteristic';
 import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
 
 const getUserVoteRef = (currentYear, beerId) =>
@@ -49,30 +49,30 @@ class RateBeer extends Component {
             <img className="RateBeer_beerImage" src={image} alt="beerimage" />
           </div>
           <div>
-            <BeerQuality
+            <BeerCharacteristic
               rating={lukt}
               setRate={rating => this.rate('lukt', rating)}
             >
               Lukt
-            </BeerQuality>
-            <BeerQuality
+            </BeerCharacteristic>
+            <BeerCharacteristic
               rating={munnfolelse}
               setRate={rating => this.rate('munnfolelse', rating)}
             >
               Munnfølelse
-            </BeerQuality>
-            <BeerQuality
+            </BeerCharacteristic>
+            <BeerCharacteristic
               rating={smak}
               setRate={rating => this.rate('smak', rating)}
             >
               Smak
-            </BeerQuality>
-            <BeerQuality
+            </BeerCharacteristic>
+            <BeerCharacteristic
               rating={ettersmak}
               setRate={rating => this.rate('ettersmak', rating)}
             >
               Ettersmak
-            </BeerQuality>
+            </BeerCharacteristic>
           </div>
         </div>
       </div>
