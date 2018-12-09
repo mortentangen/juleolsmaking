@@ -2,26 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BeerImage from '../../../modules/BeerImage/BeerImage';
 import Stars from '../../../modules/Stars/Stars';
-import './UserBeerItem.css';
+import './UserBoardItem.css';
 import connect from '../../../connect';
 import fire from '../../../fire';
 import { getUserScore } from '../../../vote-service';
 
-const UserBeerItem = ({ beer, votes, currentYear }) => (
-  <div className="UserBeerItem_container">
+const UserBoardItem = ({ beer, votes, currentYear }) => (
+  <div className="UserBoardItem_container">
     <Link to={`/userboard/${currentYear}/${beer.id}`}>
-      <div key={beer.id} className="UserBeerItem_innerContainer">
-        <div className="UserBeerItem_beerImage">
+      <div key={beer.id} className="UserBoardItem_innerContainer">
+        <div className="UserBoardItem_beerImage">
           <BeerImage image={beer.image} />
         </div>
-        <div className="UserBeerItem_row">
-          <div className="UserBeerItem_description">
-            <div className="UserBeerItem_beerName">
+        <div className="UserBoardItem_row">
+          <div className="UserBoardItem_description">
+            <div className="UserBoardItem_beerName">
               <div>{beer.brand}</div>
               <div> {beer.name}</div>
             </div>
           </div>
-          <div className="UserBeerItem_detailedScore">
+          <div className="UserBoardItem_detailedScore">
             <div>
               <span>
                 Lukt <Stars nr={votes.lukt} />
@@ -40,9 +40,9 @@ const UserBeerItem = ({ beer, votes, currentYear }) => (
             </div>
           </div>
         </div>
-        <div className="UserBeerItem_score">
+        <div className="UserBoardItem_score">
           <span>{getUserScore(votes)}</span>
-          <span className="UserBeerItem_star">
+          <span className="UserBoardItem_star">
             <Stars nr={1} size={32} />
           </span>
         </div>
@@ -62,4 +62,4 @@ export default connect(
   'votes',
   ref,
   setStateFromSnapshot
-)(UserBeerItem);
+)(UserBoardItem);

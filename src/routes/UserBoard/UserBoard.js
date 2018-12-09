@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../../modules/User/User';
-import UserBeerItem from './UserBeerItem/UserBeerItem';
+import UserBoardItem from './UserBeerItem/UserBoardItem';
 import './UserBoard.css';
 import connect from '../../connect';
 
@@ -25,7 +25,7 @@ const UserBoard = ({
       </div>
       <div className="UserBoard_list">
         {beerList.map(beer => (
-          <UserBeerItem key={beer.id} beer={beer} currentYear={currentYear} />
+          <UserBoardItem key={beer.id} beer={beer} currentYear={currentYear} />
         ))}
       </div>
     </div>

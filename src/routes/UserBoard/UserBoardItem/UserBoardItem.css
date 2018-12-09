@@ -1,9 +1,9 @@
-.UserBeerItem_container {
+.UserBoardItem_container {
 	display: flex;
 	justify-content: center;
 }
 
-.UserBeerItem_innerContainer {
+.UserBoardItem_innerContainer {
 	width: 360px;
 	padding: 10px;
 	display: flex;
@@ -11,7 +11,7 @@
 	align-items: center;
 }
 
-.UserBeerItem_beerImage {
+.UserBoardItem_beerImage {
 	flex: 0 0 60px;
 	width: 60px;
 	height: 60px;
@@ -19,28 +19,28 @@
 	border-radius: 50%;
 	overflow: hidden;
 }
-.UserBeerItem_beerImage > img {
+.UserBoardItem_beerImage > img {
 	height: 60px;
 }
 
-.UserBeerItem_beerName {
+.UserBoardItem_beerName {
 	font-family: 'Lobster', Georgia, Times, serif;
 	max-width: 250px;
 	display: inline-block;
 	overflow: hidden;
 }
-.UserBeerItem_beerName > div {
+.UserBoardItem_beerName > div {
 	padding: 0 3px;
 	display: inline-block;
 	white-space: nowrap;
 }
 
-.UserBeerItem_description {
+.UserBoardItem_description {
 	min-width: 225px;
 	margin-bottom: 5px;
 }
 
-.UserBeerItem_score {
+.UserBoardItem_score {
 	font-family: 'Lobster', Georgia, Times, serif;
 	min-width: 65px;
 	display: flex;
@@ -48,19 +48,19 @@
 	justify-content: center;
 }
 
-.UserBeerItem_detailedScore > div > span {
+.UserBoardItem_detailedScore > div > span {
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
 	margin-right: 5px;
 	font-size: 11px;
 }
 
-.UserBeerItem_star > span {
+.UserBoardItem_star > span {
 	font-size: 32px;
 	line-height: 32px;
 	padding: 0 0 0 5px;
 }
 
-.UserBeerItem_row {
+.UserBoardItem_row {
 	display: flex;
 	flex-direction: column;
 }
