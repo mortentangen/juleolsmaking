@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fire } from '../../fire';
-import './BeerReview.css';
+import './RateBeer.css';
 
 import connect from '../../connect';
 import BeerQuality from './BeerQuality/BeerQuality';
@@ -9,7 +9,7 @@ import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
 const getUserVoteRef = (currentYear, beerId) =>
   `votes/${currentYear}/${beerId}/${fire.auth().currentUser.uid}`;
 
-class BeerReview extends Component {
+class RateBeer extends Component {
   rate(aspect, rate) {
     const { currentYear, beerId } = this.props.match.params;
     if (rate.type === 'click') {
@@ -34,7 +34,7 @@ class BeerReview extends Component {
     } = this.props.vote;
     return (
       <div>
-        <div className="BeerReview_beerTitle">
+        <div className="RateBeer_beerTitle">
           <div>
             <ChristmasFont>{brand}</ChristmasFont>
           </div>
@@ -44,9 +44,9 @@ class BeerReview extends Component {
             </ChristmasFont>
           </div>
         </div>
-        <div className="BeerReview_container">
-          <div className="BeerReview_imageContainer">
-            <img className="BeerReview_beerImage" src={image} alt="beerimage" />
+        <div className="RateBeer_container">
+          <div className="RateBeer_imageContainer">
+            <img className="RateBeer_beerImage" src={image} alt="beerimage" />
           </div>
           <div>
             <BeerQuality
@@ -102,5 +102,5 @@ export default connect(
     'beer',
     firebaseBeerRef,
     setStateFromSnapshotForBeer
-  )(BeerReview)
+  )(RateBeer)
 );
