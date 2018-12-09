@@ -3,25 +3,25 @@ import { Link } from 'react-router-dom';
 import BeerImage from '../../../modules/BeerImage/BeerImage';
 // TODO move stars
 import Stars from '../../../modules/Stars/Stars';
-import './BeerItem.css';
+import './BoardItem.css';
 import { getUserScore, getTotalBeerScore } from '../../../vote-service';
 
-const BeerItem = ({ beer, votes, usersWithColors, currentYear }) => (
-  <div key={beer.id} className="BeerItem_container">
-    <div className="BeerItem_innerContainer">
-      <div className="BeerItem_beerImage">
+const BoardItem = ({ beer, votes, usersWithColors, currentYear }) => (
+  <div key={beer.id} className="BoardItem_container">
+    <div className="BoardItem_innerContainer">
+      <div className="BoardItem_beerImage">
         <BeerImage image={beer.image} />
       </div>
-      <div className="BeerItem_row">
-        <div className="BeerItem_description">
+      <div className="BoardItem_row">
+        <div className="BoardItem_description">
           <Link to={`/userboard/${currentYear}/${beer.id}`}>
-            <div className="BeerItem_beerName">
+            <div className="BoardItem_beerName">
               <div>{beer.brand}</div>
               <div> {beer.name}</div>
             </div>
           </Link>
         </div>
-        <div className="BeerItem_individualScore">
+        <div className="BoardItem_individualScore">
           {Object.entries(votes).map(([userId, value]) => (
             <div key={userId}>
               <Stars
@@ -33,9 +33,9 @@ const BeerItem = ({ beer, votes, usersWithColors, currentYear }) => (
           ))}
         </div>
       </div>
-      <div className="BeerItem_score">
+      <div className="BoardItem_score">
         <span>{getTotalBeerScore(votes)}</span>
-        <span className="BeerItem_star">
+        <span className="BoardItem_star">
           <Stars nr={1} size={20} />
         </span>
       </div>
@@ -43,4 +43,4 @@ const BeerItem = ({ beer, votes, usersWithColors, currentYear }) => (
   </div>
 );
 
-export default BeerItem;
+export default BoardItem;

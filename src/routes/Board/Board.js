@@ -1,5 +1,5 @@
 import React from 'react';
-import BeerItem from './BeerItem/BeerItem';
+import BoardItem from './BoardItem/BoardItem';
 import Participants from './Participants/Participants';
 import { sortByScore } from '../../vote-service';
 import Snow from 'react-snow-effect';
@@ -20,7 +20,7 @@ const Board = ({ beer, votesForYear, users, colors, shouldSnow, currentYear }) =
       <Participants usersWithColors={usersWithColors} />
       <div>
         {sortedBeers.map(({ beerId }) => (
-          <BeerItem
+          <BoardItem
             key={beerId}
             beer={beer[beerId]}
             votes={votesForYear[beerId] || {}}

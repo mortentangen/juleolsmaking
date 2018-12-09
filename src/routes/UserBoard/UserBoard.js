@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../../modules/User/User';
-import UserBoardItem from './UserBeerItem/UserBoardItem';
+import UserBoardItem from './UserBoardItem/UserBoardItem';
 import './UserBoard.css';
 import connect from '../../connect';
 
