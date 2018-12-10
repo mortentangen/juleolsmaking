@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import connect from '../../connect';
 import Board from './Board';
 
-const colors = ['#0D5901', '#ccc', '#cc9900', 'black'];
+const colors = ['#0D5901', '#ccc', '#cc9900', 'black', 'navy'];
 
 class BoardContainer extends Component {
   constructor(props) {
