@@ -2,12 +2,11 @@
   margin: 5px;
 }
 
-.FilterPanel_active {
-  font-weight: bolder;
+.FilterPanel_item {
   cursor: pointer;
+  font-size: 14px;
 }
 
 .FilterPanel_inactive {
-  font-weight: lighter;
-  cursor: pointer;
+  opacity: 0.3;
 }

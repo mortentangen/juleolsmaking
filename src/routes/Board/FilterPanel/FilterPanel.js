@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './FilterPanel.css';
 
 const isActive = active =>
-  active ? 'FilterPanel_active' : 'FilterPanel_inactive';
+  active
+    ? 'FilterPanel_item'
+    : 'FilterPanel_item FilterPanel_inactive';
 
 const FilterPanel = ({
   filter,

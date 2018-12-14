@@ -27,19 +27,15 @@ const getTotalBeerScore = (allBeerVotes, filter = defaultFilter) =>
   Object.values(allBeerVotes).reduce((a, b) => a + getUserScore(b, filter), 0);
 
 const sortByScore = (votes, filter) =>
-  {
-    console.log('sortByScore', filter);
-    
-    return Object.entries(votes)
-      .map(([beerId, beerVotes]) => {
-        return {
-          beerId,
-          score: getTotalBeerScore(beerVotes, filter)
-        };
-      })
-      .sort((a, b) => {
-        return b.score - a.score;
-      });
-  };
+  Object.entries(votes)
+  .map(([beerId, beerVotes]) => {
+    return {
+      beerId,
+      score: getTotalBeerScore(beerVotes, filter)
+    };
+  })
+  .sort((a, b) => {
+    return b.score - a.score;
+  });
 
 export { getUserScore, getTotalBeerScore, sortByScore };
