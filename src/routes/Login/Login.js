@@ -38,7 +38,8 @@ class Login extends Component {
       if (redirectToReferrer) {
         return <Redirect to={from} />;
       } else {
-        return <Redirect to="/userboard" />;
+        // TODO: hardcoded year!
+        return <Redirect to="/userboard/2018" />;
       }
     }
     return (
