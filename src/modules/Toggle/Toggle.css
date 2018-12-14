@@ -1,0 +1,19 @@
+.Toggles_expand {
+  display: block;
+}
+
+.Toggle_collapse {
+  display: none;
+}
+
+.Toggle_unstyledBtn {
+  border: none;
+  padding: 0;
+  background: none;
+  color: darkgray;
+}
+
+.Toggle_unstyledBtn:focus {
+  border: none;
+  outline: none;
+}

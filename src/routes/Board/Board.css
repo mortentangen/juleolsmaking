@@ -2,3 +2,8 @@
 	position: absolute;
 	left: 0;
 }
+
+.Board_filterPanel {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}

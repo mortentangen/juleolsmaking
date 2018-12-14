@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BeerCharacteristic from './BeerCharacteristic/BeerCharacteristic';
 import ChristmasFont from '../../modules/ChristmasFont/ChristmasFont';
+import {
+  ETTERSMAK,
+  MUNNFOLELSE,
+  SMAK,
+  LUKT
+} from '../../constants/BeerCharacteristicType'; 
 
 import './RateBeer.css';
 
@@ -16,7 +23,6 @@ class RateBeer extends Component {
 
   render() {
     const defaultImage = 'https://bilder.vinmonopolet.no/bottle.png';
-    console.log('props', this.props);
     const { brand, name, year, image = defaultImage } = this.props.beer;
     const {
       lukt = 0,
@@ -43,25 +49,25 @@ class RateBeer extends Component {
           <div>
             <BeerCharacteristic
               rating={lukt}
-              setRate={rating => this.rate('lukt', rating)}
+              setRate={rating => this.rate(LUKT, rating)}
             >
               Lukt
             </BeerCharacteristic>
             <BeerCharacteristic
               rating={munnfolelse}
-              setRate={rating => this.rate('munnfolelse', rating)}
+              setRate={rating => this.rate(MUNNFOLELSE, rating)}
             >
               Munnfølelse
             </BeerCharacteristic>
             <BeerCharacteristic
               rating={smak}
-              setRate={rating => this.rate('smak', rating)}
+              setRate={rating => this.rate(SMAK, rating)}
             >
               Smak
             </BeerCharacteristic>
             <BeerCharacteristic
               rating={ettersmak}
-              setRate={rating => this.rate('ettersmak', rating)}
+              setRate={rating => this.rate(ETTERSMAK, rating)}
             >
               Ettersmak
             </BeerCharacteristic>
@@ -70,6 +76,15 @@ class RateBeer extends Component {
       </div>
     );
   }
+}
+
+RateBeer.propTypes = {
+  vote: PropTypes.shape({
+    [LUKT]: PropTypes.number,
+    [MUNNFOLELSE]: PropTypes.number,
+    [SMAK]: PropTypes.number,
+    [ETTERSMAK]: PropTypes.number,
+  })
 }
 
 export default RateBeer;

@@ -1,25 +1,46 @@
-import React, { useState } from 'react';
-import FilterPanelContent from './FilterPanelContent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import './FilterPanel.css';
 
-const ArrowDown = <FontAwesomeIcon icon={faChevronDown} size="1x" />;
-const ArrowUp = <FontAwesomeIcon icon={faChevronUp} size="1x" />;
+const isActive = active =>
+  active ? 'FilterPanel_active' : 'FilterPanel_inactive';
 
-const FilterPanel = () => {
-  const [expand, setExpanded] = useState(false);
-  const toggleExpand = () => setExpanded(!expand);
-
+const FilterPanel = ({
+  filter,
+  setMunnfolelse,
+  setSmak,
+  setEttersmak,
+  setLukt
+}) => {
   return (
-    <div>
-      <div className={expand ? 'FilterPanel_expand' : 'FilterPanel_collapse'}>
-        <FilterPanelContent />
-      </div>
-      <button className="FilterPanel_unstyledBtn" onClick={toggleExpand}>{expand ? ArrowUp : ArrowDown}</button>
+    <div className="FilterPanel_container">
+      <span className={isActive(filter.lukt)} onClick={setLukt}>
+        Lukt
+      </span>
+      <span className={isActive(filter.munnfolelse)} onClick={setMunnfolelse}>
+        Munnfølelse
+      </span>
+      <span className={isActive(filter.smak)} onClick={setSmak}>
+        Smak
+      </span>
+      <span className={isActive(filter.ettersmak)} onClick={setEttersmak}>
+        Ettersmak
+      </span>
     </div>
   );
+};
+
+FilterPanel.prototype = {
+  filter: PropTypes.shape({
+    lukt: PropTypes.string.isRequired,
+    munnfolelse: PropTypes.string.isRequired,
+    smak: PropTypes.string.isRequired,
+    ettersmak: PropTypes.string.isRequired
+  }),
+  setLukt: PropTypes.func.isRequired,
+  setMunnfolelse: PropTypes.func.isRequired,
+  setSmak: PropTypes.func.isRequired,
+  setEttersmak: PropTypes.func.isRequired
 };
 
 export default FilterPanel;

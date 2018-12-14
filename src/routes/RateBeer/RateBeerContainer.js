@@ -3,10 +3,9 @@ import { fire } from '../../fire';
 import connect from '../../connect';
 import RateBeer from './RateBeer';
 
-const RateBeerContainer = props => {
-  console.log('RBC.props', props)
-  return <RateBeer {...props} saveRating={saveRating} />;
-};
+const RateBeerContainer = props => (
+  <RateBeer {...props} saveRating={saveRating} />
+);
 
 const getUserVoteRef = (currentYear, beerId) =>
   `votes/${currentYear}/${beerId}/${fire.auth().currentUser.uid}`;
