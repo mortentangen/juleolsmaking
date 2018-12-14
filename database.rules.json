@@ -2,9 +2,11 @@
   "rules": {
     ".read": true,
     "votes": {
-      "$beer_id": {
-        "$user_id": {
-          ".write": "auth.uid === $user_id"
+      "$year": {
+        "$beer_id": {
+          "$user_id": {
+            ".write": "auth.uid === $user_id"
+          }
         }
       }
     }

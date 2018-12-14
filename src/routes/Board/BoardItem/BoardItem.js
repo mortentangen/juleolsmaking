@@ -22,7 +22,7 @@ const BoardItem = ({ beer, votes, usersWithColors, currentYear }) => (
             <div key={userId}>
               <Stars
                 nr={getUserScore(value)}
-                size={14}
+                size={12}
                 color={usersWithColors.find(user => user.uid === userId).color}
               />
             </div>
