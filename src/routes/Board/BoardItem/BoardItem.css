@@ -1,69 +1,69 @@
 .BoardItem_container {
-	padding: 10px;
-	display: flex;
-	justify-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .BoardItem_innerContainer {
-	width: 360px;
-	padding-top: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 360px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .BoardItem_beerImage {
-	flex: 0 0 60px;
-	width: 60px;
-	height: 60px;
-	background-color: white;
-	border-radius: 50%;
-	overflow: hidden;
+  flex: 0 0 60px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .BoardItem_beerImage > img {
-	height: 60px;
+  height: 60px;
 }
 
 .BoardItem_beerName {
-	font-family: 'Lobster', Georgia, Times, serif;
-	max-width: 250px;
-	display: inline-block;
-	overflow: hidden;
+  font-family: 'Lobster', Georgia, Times, serif;
+  max-width: 250px;
+  display: inline-block;
+  overflow: hidden;
 }
 .BoardItem_beerName > div {
-	padding: 0 3px;
-	display: inline-block;
-	white-space: nowrap;
+  padding: 0 3px;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .BoardItem_description {
-	min-width: 260px;
-	margin-bottom: 5px;
+  min-width: 200px;
+  margin-bottom: 5px;
 }
 
 .BoardItem_score {
-	font-family: 'Lobster', Georgia, Times, serif;
-	min-width: 65px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  font-family: 'Lobster', Georgia, Times, serif;
+  min-width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .BoardItem_individualScore {
-	line-height: 10px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin-left: 25px;
+  line-height: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 25px;
 }
 
 .BoardItem_star > span {
-	font-size: 32px;
-	line-height: 32px;
-	padding: 0 0 0 5px;
+  font-size: 32px;
+  line-height: 32px;
+  padding: 0 0 0 5px;
 }
 
 .BoardItem_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

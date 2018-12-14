@@ -4,7 +4,7 @@ import Stars from '../../../modules/Stars/Stars';
 import './BoardItem.css';
 import { getUserScore, getTotalBeerScore } from '../../../vote-service';
 
-const BoardItem = ({ beer, votes, usersWithColors, currentYear }) => (
+const BoardItem = ({ beer, votes, usersWithColors }) => (
   <div key={beer.id} className="BoardItem_container">
     <div className="BoardItem_innerContainer">
       <div className="BoardItem_beerImage">
