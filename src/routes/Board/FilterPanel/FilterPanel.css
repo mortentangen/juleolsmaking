@@ -1,0 +1,14 @@
+.FilterPanel_expand {
+  display: block;
+}
+
+.FilterPanel_collapse {
+  display: none;
+}
+
+.FilterPanel_unstyledBtn {
+  border: none;
+  padding: 0;
+  background: none;
+  color: darkgray;
+}
