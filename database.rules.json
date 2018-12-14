@@ -9,6 +9,11 @@
           }
         }
       }
+    },
+    "users": {
+      "$user_id": {
+        ".write": "auth.uid === $user_id"
+      }
     }
   }
 }
